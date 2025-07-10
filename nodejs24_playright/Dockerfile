@@ -32,12 +32,13 @@ RUN npm install -g corepack
 RUN corepack enable
 RUN corepack prepare pnpm@latest --activate
 
-RUN npm install -g playwright
-RUN npx playwright install --with-deps
+RUN npx playwright install-deps chromium
 
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
+
+RUN npx playwright install chromium
 
 COPY --chown=container:container ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

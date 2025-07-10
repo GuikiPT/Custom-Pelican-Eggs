@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker build \
-  -t guikipt/custom_pelican_eggs:nodejs24_playright \
+  -t ghcr.io/guikipt/custom-pelican-eggs:nodejs24_playright \
   -f Dockerfile .
